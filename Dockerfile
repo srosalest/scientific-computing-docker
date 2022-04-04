@@ -6,6 +6,8 @@ COPY . .
 
 RUN apt-get update \
 	&& apt-get install -y wget \
+	&& apt-get install -y python3-pip \
+	&& pip3 install -r requirements.txt \
 	&& wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh \
 	&& bash miniconda.sh -b -p /miniconda \
 	&& wget https://julialang-s3.julialang.org/bin/linux/x64/1.7/julia-1.7.2-linux-x86_64.tar.gz -O julia.tar.gz \
