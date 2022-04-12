@@ -1,7 +1,5 @@
 FROM ubuntu:latest
-
 WORKDIR root/scientific-computing/
-
 COPY . .
 
 RUN apt-get update \
@@ -27,3 +25,4 @@ RUN julia julia-kernel-installation.jl \
 
 EXPOSE 8888
 CMD ["jupyter", "notebook", "--port=8888", "--allow-root", "--no-browser", "--ip=0.0.0.0", "--NotebookApp.token=''","--NotebookApp.password=''"]
+
